@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+
+<style>
+.centered-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.items{
+  border: 2px solid black; pad ding:20px;margin-top:20px;
+}
+
+li {
+  float: right;
+  color:black !important;
+    text-decoration: none !important;
+}
+
+body {
+  font: 15px Arial;
+  margin-left: 50px;
+  margin-right: 50px;
+  color:black !important;
+    text-decoration: none !important;
+}
+ul {
+  list-style-type: none;
+  margin: 25px;
+  color:black !important;
+    text-decoration: none !important;
+}
+li a {
+  font-size: 35px;
+  display: block;
+  color: black;
+  padding: 24px 52px;
+  text-decoration: none;
+  color:black !important;
+    text-decoration: none !important;
+}
+li b {
+  font-size: 35px;
+  color: black;
+  text-decoration: none;
+  color:black !important;
+    text-decoration: none !important;
+}
+li a:hover {
+  opacity:0.5;\
+  color:black !important;
+    text-decoration: none !important;
+}
+
+
+
+</style>
+<body>
+  <div>
+    <a href="contributors.html">
+  <img src="Images\Logo.png" alt="Desindr" style="float:left;width:200px;height:100px;">
+  </a>
+    <ul>
+        <li>
+          <p class="a">
+            <a href="myprofile.html">my profile</a>
+        <li>
+          <p class="a">
+          <a href="students.html">students</a>
+        <li>
+          <p class="a">
+            <a href="work.html">work</a>
+        <li>
+          <p class="a">
+            <a href="faq.html">faq</a>
+        <li>
+          <p class="a">
+            <a href="home.html">home</a>
+
+    </ul>
+  </div>
+  <br><br><br><br><br><br><br>
+</div>
+</body>
+
+<body>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+  * {
+    box-sizing: border-box;
+  }
+
+  #myInput {
+    background-image: url('/css/searchicon.png');
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    width: 100%;
+    font-size: 16px;
+    padding: 12px 20px 12px 40px;
+    border: 1px solid #ddd;
+    margin-bottom: 12px;
+  }
+
+  #myTable {
+    border-collapse: collapse;
+    width: 100%;
+    border: 1px solid #grey;
+    font-size: 18px;
+  }
+
+  #myTable th, #myTable td {
+    text-align: left;
+    padding: 12px;
+  }
+
+  #myTable tr {
+    border-bottom: 1px solid grey;
+  }
+
+  #myTable tr.header, #myTable tr:hover {
+    background-color: grey;
+  }
+  </style>
+  </head>
+  <body>
+
+  <h2>students</h2>
+
+  <input type="text" id="myInput" onkeyup="myFunction()" placeholder="search" title="Type in a name">
+
+  <table id="myTable">
+    <tr class="header">
+      <th style="width:25%;">name</th>
+      <th style="width:60%;">experience</th>
+      <th style="width:25%;">portfolio</th>
+    </tr>
+    <tr>
+      <td>
+      <img src="Images\temporary profile image.png" style="float:left;width:100px;height:100px;">
+      jake</td>
+      <td>architect, graphic design</td>
+      <td>
+      	<a href="url">link</a>
+      </td>
+    </tr>
+    <tr>
+      <td>
+      <img src="Images\tyler_face.png" style="float:left;width:100px;height:100px;">
+    	tyler</td>
+      <td>interior design</td>
+      <td>
+      	<a href="url">link</a>
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+      <img src="Images\nour_face.png" style="float:left;width:100px;height:100px;">
+      nour</td>
+      <td>landscape architect</td>
+      <td>
+      	<a href="url">link</a>
+      </td>
+    </tr>
+    <tr>
+      <td>
+      <img src="Images\amir_face.png" style="float:left;width:100px;height:100px;">
+      amir</td>
+      <td>civil engineer</td>
+      <td>
+      	<a href="url">link</a>
+      </td>
+    </tr>
+  </table>
+
+  <script>
+  function myFunction() {
+    var input, filter, table, tr, td, i, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("myTable");
+    tr = table.getElementsByTagName("tr");
+    for (i = 1; i < tr.length; i++) {
+      td = tr[i].getElementsByTagName('td')[1];
+      if (td) {
+        txtValue = td.textContent || td.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          tr[i].style.display = "";
+        } else {
+          tr[i].style.display = "none";
+        }
+      }
+    }
+  }
+  </script>
+
+  </body>
+
+<script>
+filterSelection("all")
+function filterSelection(c) {
+  var x, i;
+  x = document.getElementsByClassName("filterDiv");
+  if (c == "all") c = "";
+  for (i = 0; i < x.length; i++) {
+    w3RemoveClass(x[i], "show");
+    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+  }
+}
+
+function w3AddClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
+  }
+}
+
+function w3RemoveClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    while (arr1.indexOf(arr2[i]) > -1) {
+      arr1.splice(arr1.indexOf(arr2[i]), 1);
+    }
+  }
+  element.className = arr1.join(" ");
+}
+
+// Add active class to the current button (highlight it)
+var btnContainer = document.getElementById("myBtnContainer");
+var btns = btnContainer.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function(){
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
+}
+</script>
+
+</body>
+</html>
